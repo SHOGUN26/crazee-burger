@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
-  const [inputValue, setInputValue] = useState();
+  const [inputValue, setInputValue] = useState("");
+  const navigate = useNavigate();
   // comportements
   const handleSubmit = (e) => {
     e.preventDefault();
     setInputValue("");
+    navigate(`order/${inputValue}`);
   };
 
   // affichage (render)
@@ -23,8 +25,8 @@ export default function LoginForm() {
         required
         value={inputValue}
       />
-      <Link to="/order">
-        <button>Accédez à votre espace</button>
+      <Link to={`/order/${inputValue}`}>
+        <button type="submit">Accédez à votre espace</button>
       </Link>
     </form>
   );
