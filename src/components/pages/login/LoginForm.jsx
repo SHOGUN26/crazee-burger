@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./LoginForm.css";
 
 export default function LoginForm() {
   const [inputValue, setInputValue] = useState("");
@@ -31,3 +32,10 @@ export default function LoginForm() {
     </form>
   );
 }
+
+/** 4 méthodes pour ajouter du style à un composant
+ * 1. inline style
+ * 2. object style
+ * 3. modules CSS(avec className)
+ * 4. global style(index.css)
+ */
