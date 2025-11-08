@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./LoginForm.css";
+import styled from "styled-components";
 
 export default function LoginForm() {
   const [inputValue, setInputValue] = useState("");
@@ -15,7 +15,7 @@ export default function LoginForm() {
   // affichage (render)
 
   return (
-    <form action="submit" onSubmit={handleSubmit}>
+    <div action="submit" onSubmit={handleSubmit}>
       <h1>Bienvenue chez nous !</h1>
       <br />
       <h2>Connectez-vous</h2>
@@ -27,15 +27,8 @@ export default function LoginForm() {
         value={inputValue}
       />
       <Link to={`/order/${inputValue}`}>
-        <button type="submit">Accédez à votre espace</button>
+        <button type="submit">Accédez à mon espace</button>
       </Link>
-    </form>
+    </div>
   );
 }
-
-/** 4 méthodes pour ajouter du style à un composant
- * 1. inline style
- * 2. object style
- * 3. modules CSS(avec className)
- * 4. global style(index.css)
- */
