@@ -35,9 +35,12 @@ export default function LoginForm() {
 
       <div>
         <Link to={`/order/${inputValue}`}>
-          <button type="submit">
-            Accédez à mon espace <MdOutlineKeyboardArrowRight />{" "}
-          </button>
+          <div>
+            <button type="submit">
+              <span>Accédez à mon espace</span>
+              <MdOutlineKeyboardArrowRight />
+            </button>
+          </div>
         </Link>
       </div>
     </LoginFormStyled>
@@ -64,7 +67,7 @@ const LoginFormStyled = styled.form`
     border: none;
     height: 2px;
     background-color: #ffa01b;
-    opacity: 1;
+    opacity: 1.5;
   }
 
   input {
